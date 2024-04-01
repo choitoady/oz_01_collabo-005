@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { BsPersonCircle } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
-import { SlMenu } from "react-icons/sl";
 import "./Nav.css";
 
 function Nav(): JSX.Element {
@@ -12,7 +12,6 @@ function Nav(): JSX.Element {
   };
 
   return (
-
     <div className="Nav-container">
       <div className="header-box">
         <div className="Logo">LANDING</div>
@@ -35,8 +34,8 @@ function Nav(): JSX.Element {
             <button className="search-button" onClick={toggleSearch}>
               {showSearch ? <RxCross1 size={27} /> : <FiSearch size={27} />}
             </button>
-            <button className="menu-button">
-              <SlMenu size={27} />
+            <button className="user-button">
+              <BsPersonCircle size={27} />
             </button>
           </div>
         </div>
