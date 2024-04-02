@@ -1,4 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
@@ -15,6 +17,7 @@ function Nav(): JSX.Element {
     <div className="Nav-container">
       <div className="header-box">
         <div className="Logo">LANDING</div>
+
         <div className="navbar-button-box">
           {showSearch && (
             <form className="search-screen">
@@ -34,9 +37,17 @@ function Nav(): JSX.Element {
             <button className="search-button" onClick={toggleSearch}>
               {showSearch ? <RxCross1 size={27} /> : <FiSearch size={27} />}
             </button>
-            <button className="user-button">
-              <BsPersonCircle size={27} />
-            </button>
+            <NavDropdown
+              title={<BsPersonCircle size={27} />}
+              id="basic-nav-dropdown"
+            >
+              <NavDropdown.Item href="#action/3.1">로그인 </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">나의 정보</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">나의 모임</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">모임 관리</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.5">모임 개설</NavDropdown.Item>
+            </NavDropdown>
           </div>
         </div>
       </div>
